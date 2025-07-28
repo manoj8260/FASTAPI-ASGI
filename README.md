@@ -39,7 +39,7 @@ Then edit the .env file and update your PostgreSQL credentials:
 DATABASE_URL=postgresql+asyncpg://postgres:your_password@localhost:5432/qa_db
 
 ```
-###🚀 How to Run the App Locally
+### 4.🚀 How to Run the App Locally
 Make sure your PostgreSQL server is running.
 
 Then start the FastAPI app with:
@@ -48,7 +48,7 @@ Then start the FastAPI app with:
 
 uvicorn app.main:app --reload
 ```
-###📤 1. Upload a Document
+###📤 5. Upload a Document
 POST /documents/
 
 Request Body:
@@ -59,5 +59,73 @@ Request Body:
   "content": "FastAPI is a modern, fast Python web framework."
 }
 ```
+
+❓ 2. Ask a Question About a Document
+POST /documents/{document_id}/question
+
+Request Body:
+```
+json
+Copy
+Edit
+{
+  "question": "What is FastAPI?"
+}
+```
+✅ Response:
+```
+json
+Copy
+Edit
+{
+  "id": 1,
+  "question": "What is FastAPI?",
+  "answer": null,
+  "status": "pending",
+  "created_at": "2025-07-28T..."
+}
+```
+⏳ 3. Retrieve Answer
+After ~5 seconds...
+
+GET /questions/{question_id}
+
+✅ Response:
+```
+json
+Copy
+Edit
+{
+  "id": 1,
+  "question": "What is FastAPI?",
+  "answer": "This is a generated answer to your question: What is FastAPI?",
+  "status": "answered",
+  "created_at": "2025-07-28T..."
+}
+```
+❤️ 4. Health Check
+GET /health
+
+✅ Response:
+```
+json
+Copy
+Edit
+{ "status": "ok" }
+```
+📁 Project Structure
+bash
+Copy
+Edit
+app/
+├── main.py          # FastAPI app entry
+├── config.py        # env config
+├── database.py      # async DB connection
+├── models.py        # SQLAlchemy models
+├── schemas.py       # Pydantic schemas
+├── services.py      # DB + async logic
+└── api/
+    ├── document.py  # document endpoints
+    └── question.py  # question endpoints
 
 
