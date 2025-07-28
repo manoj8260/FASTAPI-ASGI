@@ -39,16 +39,16 @@ Then edit the .env file and update your PostgreSQL credentials:
 DATABASE_URL=postgresql+asyncpg://postgres:your_password@localhost:5432/qa_db
 
 ```
-4.🚀 How to Run the App Locally
-Make sure your PostgreSQL server is running.
+##🚀 How to Run the App Locally
+### Make sure your PostgreSQL server is running.
 
-Then start the FastAPI app with:
+1.Then start the FastAPI app with:
 
 ```bash
 
 uvicorn app.main:app --reload
 ```
-5.📤 Upload a Document
+2.📤 Upload a Document
 POST /documents/
 
 Request Body:
@@ -59,7 +59,7 @@ Request Body:
   "content": "FastAPI is a modern, fast Python web framework."
 }
 ```
-6.❓  Ask a Question About a Document
+3.❓  Ask a Question About a Document
 POST /documents/{document_id}/question
 
 Request Body:
@@ -80,7 +80,7 @@ json
   "created_at": "2025-07-28T..."
 }
 ```
-7.⏳ Retrieve Answer
+4.⏳ Retrieve Answer
 After ~5 seconds...
 
 GET /questions/{question_id}
@@ -96,7 +96,7 @@ json
   "created_at": "2025-07-28T..."
 }
 ```
-8.❤️  Health Check
+5.❤️  Health Check
 GET /health
 
 ✅ Response:
