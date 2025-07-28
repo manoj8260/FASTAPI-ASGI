@@ -24,5 +24,11 @@ A Python backend microservice using **FastAPI**, **PostgreSQL**, and **async pro
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/fastapi-document-qa.git
+https://github.com/manoj8260/FASTAPI-ASGI.git
 cd fastapi-document-qa
+
+### 2. Create Virtual Environment & Install Dependencies
+```
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+pip install -r requirements.txt
