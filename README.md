@@ -104,7 +104,7 @@ GET /health
 json
 { "status": "ok" }
 ```
-📁 Project Structure
+## 📁 Project Structure
 ```
 app/
 ├── main.py          # FastAPI app entry
