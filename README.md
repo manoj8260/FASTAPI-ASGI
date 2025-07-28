@@ -39,8 +39,9 @@ Then edit the .env file and update your PostgreSQL credentials:
 DATABASE_URL=postgresql+asyncpg://postgres:your_password@localhost:5432/qa_db
 
 ```
-###🚀 How to Run the App Locally
- Make sure your PostgreSQL server is running.
+### 🚀 How to Run the App Locally
+
+Make sure your **PostgreSQL server is running** and the database **qa_db** exists.
 
 1.Then start the FastAPI app with:
 
