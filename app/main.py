@@ -12,4 +12,6 @@ async def startup():
 app.include_router(document.router, prefix="/documents", tags=["Documents"])
 app.include_router(question.router, tags=["Questions"])
 
-
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
