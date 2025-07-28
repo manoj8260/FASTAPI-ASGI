@@ -39,8 +39,8 @@ Then edit the .env file and update your PostgreSQL credentials:
 DATABASE_URL=postgresql+asyncpg://postgres:your_password@localhost:5432/qa_db
 
 ```
-##🚀 How to Run the App Locally
-### Make sure your PostgreSQL server is running.
+#🚀 How to Run the App Locally
+## Make sure your PostgreSQL server is running.
 
 1.Then start the FastAPI app with:
 
@@ -104,7 +104,7 @@ GET /health
 json
 { "status": "ok" }
 ```
-## 📁 Project Structure
+# 📁 Project Structure
 ```
 app/
 ├── main.py          # FastAPI app entry
