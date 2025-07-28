@@ -19,13 +19,13 @@ async def create_question(db: AsyncSession, doc_id: int, q: schemas.QuestionCrea
     await db.commit()
     await db.refresh(question)
 
-    # simulate LLM processing in background
+   
     asyncio.create_task(simulate_answer(db, question.id, q.question))
     return question
 
 async def simulate_answer(db: AsyncSession, qid: int, q: str):
     await asyncio.sleep(5)
-    async with db.begin():  # create new session context
+    async with db.begin():  
         question = await db.get(models.Question, qid)
         if question:
             question.answer = f"This is a generated answer to your question: {q}"
