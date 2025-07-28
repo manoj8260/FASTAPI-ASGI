@@ -106,7 +106,6 @@ json
 ```
 📁 Project Structure
 ```
-bash
 app/
 ├── main.py          # FastAPI app entry
 ├── config.py        # env config
